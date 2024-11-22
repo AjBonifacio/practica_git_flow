@@ -22,4 +22,14 @@ function funcionesCrud() {
       <td>${Nota}</td>
     `;
 
+
+    // Crear el botón de borrar
+    let borrar = document.createElement('button');
+    borrar.textContent = 'Borrar';
+    borrar.addEventListener('click', () => {
+      listEstudiantes.removeChild(newFila);
+    });
+
+    
+
 }
