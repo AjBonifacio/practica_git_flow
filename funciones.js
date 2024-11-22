@@ -37,7 +37,39 @@ function funcionesCrud() {
     let editar = document.createElement('button');
     editar.textContent = 'Editar';
 
+    
+    editar.addEventListener('click', () => {
+      if (editar.textContent === 'Editar') {
+        // Colocar los datos de la fila en los inputs para editarlos
+        document.getElementById('Matricula').value = newFila.children[0].textContent;
+        document.getElementById('Nombre').value = newFila.children[1].textContent;
+        document.getElementById('Apellidos').value = newFila.children[2].textContent;
+        document.getElementById('Materia').value = newFila.children[3].textContent;
+        document.getElementById('Nota').value = newFila.children[4].textContent;
 
+        // Cambiar el texto del botón a "Guardar"
+        editar.textContent = 'Guardar';
+      } else if (editar.textContent === 'Guardar') {
+
+        
+        // Guardar los cambios y actualizar la fila
+
+        newFila.children[0].textContent = document.getElementById('Matricula').value;
+        newFila.children[1].textContent = document.getElementById('Nombre').value;
+        newFila.children[2].textContent = document.getElementById('Apellidos').value;
+        newFila.children[3].textContent = document.getElementById('Materia').value;
+        newFila.children[4].textContent = document.getElementById('Nota').value;
+
+        editar.textContent = 'Editar';
+
+      
+        document.getElementById('Matricula').value = '';
+        document.getElementById('Nombre').value = '';
+        document.getElementById('Apellidos').value = '';
+        document.getElementById('Materia').value = '';
+        document.getElementById('Nota').value = '';
+      }
+    });
 
     let accionEditar = document.createElement('td');
     accionEditar.appendChild(editar);
