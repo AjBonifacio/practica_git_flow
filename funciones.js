@@ -30,6 +30,8 @@ function funcionesCrud() {
       listEstudiantes.removeChild(newFila);
     });
 
+    let accionBorrar = document.createElement('td');
+    accionBorrar.appendChild(borrar);
     
 
 }
