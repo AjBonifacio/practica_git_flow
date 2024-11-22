@@ -33,5 +33,13 @@ function funcionesCrud() {
     let accionBorrar = document.createElement('td');
     accionBorrar.appendChild(borrar);
     
+    // Crear el botón de editar 
+    let editar = document.createElement('button');
+    editar.textContent = 'Editar';
+
+
+
+    let accionEditar = document.createElement('td');
+    accionEditar.appendChild(editar);
 
 }
