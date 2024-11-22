@@ -74,4 +74,19 @@ function funcionesCrud() {
     let accionEditar = document.createElement('td');
     accionEditar.appendChild(editar);
 
+     
+    newFila.appendChild(accionBorrar);
+    newFila.appendChild(accionEditar);
+
+   
+    listEstudiantes.appendChild(newFila);
+
+    //limpia 
+    document.getElementById('Matricula').value = '';
+    document.getElementById('Nombre').value = '';
+    document.getElementById('Apellidos').value = '';
+    document.getElementById('Materia').value = '';
+    document.getElementById('Nota').value = '';
 }
+
+botonAdd.addEventListener('click', funcionesCrud);
