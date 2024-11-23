@@ -1,3 +1,7 @@
+const botonAdd = document.querySelector('button');
+const listEstudiantes = document.getElementById("listaEstudiantes");
+
+
 function funcionesCrud() {
   const Matricula = document.getElementById('Matricula').value;
   const Nombre = document.getElementById('Nombre').value;
