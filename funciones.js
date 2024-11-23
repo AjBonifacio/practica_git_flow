@@ -10,7 +10,7 @@ function funcionesCrud() {
     const Materia = document.getElementById('Materia').value;
     const Nota = document.getElementById('Nota').value;
 
-
+////////se deberia poner una verificacion por si las variables estan vacias
     const newFila = document.createElement('tr');
 
       // Añade las celdas a la fila
