@@ -3,25 +3,23 @@ const listEstudiantes = document.getElementById("listaEstudiantes");
 
 
 function funcionesCrud() {
+  const Matricula = document.getElementById('Matricula').value;
+  const Nombre = document.getElementById('Nombre').value;
+  const Apellidos = document.getElementById('Apellidos').value;
+  const Materia = document.getElementById('Materia').value;
+  const Nota = document.getElementById('Nota').value;
 
-    const Matricula = document.getElementById('Matricula').value;
-    const Nombre = document.getElementById('Nombre').value;
-    const Apellidos = document.getElementById('Apellidos').value;
-    const Materia = document.getElementById('Materia').value;
-    const Nota = document.getElementById('Nota').value;
-
-
+  if (Matricula && Nombre && Apellidos && Materia && Nota) {
     const newFila = document.createElement('tr');
 
-      // Añade las celdas a la fila
-      newFila.innerHTML = `
+    // Añade las celdas a la fila
+    newFila.innerHTML = `
       <td>${Matricula}</td>
       <td>${Nombre}</td>
       <td>${Apellidos}</td>
       <td>${Materia}</td>
       <td>${Nota}</td>
     `;
-
 
     // Crear el botón de borrar
     let borrar = document.createElement('button');
@@ -30,14 +28,10 @@ function funcionesCrud() {
       listEstudiantes.removeChild(newFila);
     });
 
-    let accionBorrar = document.createElement('td');
-    accionBorrar.appendChild(borrar);
-    
     // Crear el botón de editar 
     let editar = document.createElement('button');
     editar.textContent = 'Editar';
 
-    
     editar.addEventListener('click', () => {
       if (editar.textContent === 'Editar') {
         // Colocar los datos de la fila en los inputs para editarlos
@@ -74,7 +68,11 @@ function funcionesCrud() {
     let accionEditar = document.createElement('td');
     accionEditar.appendChild(editar);
 
-     
+    let accionBorrar = document.createElement('td');
+    accionBorrar.appendChild(borrar);
+    
+    
+    
     newFila.appendChild(accionBorrar);
     newFila.appendChild(accionEditar);
 
@@ -87,6 +85,9 @@ function funcionesCrud() {
     document.getElementById('Apellidos').value = '';
     document.getElementById('Materia').value = '';
     document.getElementById('Nota').value = '';
+  } else {
+    alert(" ingrese todos los campos del estudiante");
+  }
 }
 
 botonAdd.addEventListener('click', funcionesCrud);
